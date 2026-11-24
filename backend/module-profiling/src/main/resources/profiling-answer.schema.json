@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["experience", "knowledge", "objective", "horizonYears", "financialCapacity", "riskTolerance", "uncertainFields", "nextQuestion"],
+  "properties": {
+    "experience": {"enum": ["BEGINNER", "INTERMEDIATE", "EXPERIENCED", null]},
+    "knowledge": {"enum": ["BASIC", "MODERATE", "ADVANCED", null]},
+    "objective": {"enum": ["PRESERVATION", "INCOME", "GROWTH", null]},
+    "horizonYears": {"type": ["integer", "null"], "minimum": 1, "maximum": 40},
+    "financialCapacity": {"enum": ["LIMITED", "MODERATE", "COMFORTABLE", null]},
+    "riskTolerance": {"type": ["integer", "null"], "minimum": 1, "maximum": 5},
+    "uncertainFields": {"type": "array", "items": {"enum": ["experience", "knowledge", "objective", "horizonYears", "financialCapacity", "riskTolerance"]}},
+    "nextQuestion": {"type": ["string", "null"], "maxLength": 300}
+  }
+}
